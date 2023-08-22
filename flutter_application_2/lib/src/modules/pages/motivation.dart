@@ -4,18 +4,21 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter_application_2/src/modules/pages/motivation2.dart'; // Importe o pacote de áudio
 
 class Motivation extends StatefulWidget {
+  const Motivation({super.key});
+
   @override
-  _MotivationState createState() => _MotivationState();
+  MotivationState createState() => MotivationState();
 }
 
-class _MotivationState extends State<Motivation> {
-  AudioCache _audioCache = AudioCache();
+class MotivationState extends State<Motivation> {
   late final AudioPlayer _audioPlayer; // Crie uma instância de AudioCache
   bool _showButton1 = true;
   bool _showButton2 = true;
   bool _showButton3 = true;
   bool _showButton4 = true;
   bool _showImageAfterDelay = false;
+  int cont = 0;
+
   @override
   void initState() {
     super.initState();
@@ -33,10 +36,10 @@ class _MotivationState extends State<Motivation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aperte as imagens'),
+        title: const Text('Aperte as imagens'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/data/imagns/black.png'),
             fit: BoxFit.cover,
@@ -58,7 +61,7 @@ class _MotivationState extends State<Motivation> {
                       ? _buildStaticImageAndText(
                           'assets/data/imagns/IMG2.png', 'Texto Estático 1')
                       : Container(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _showButton2
                   ? _buildTextButtonWithImage(
                       'Botão 2',
@@ -71,7 +74,7 @@ class _MotivationState extends State<Motivation> {
                       ? _buildStaticImageAndText(
                           'assets/data/imagns/IMG2.png', 'Texto Estático 2')
                       : Container(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _showButton3
                   ? _buildTextButtonWithImage(
                       'Botão 3',
@@ -84,7 +87,7 @@ class _MotivationState extends State<Motivation> {
                       ? _buildStaticImageAndText(
                           'assets/data/imagns/IMG2.png', 'Texto Estático 3')
                       : Container(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _showButton4
                   ? _buildTextButtonWithImage(
                       'Botão 4',
@@ -114,33 +117,40 @@ class _MotivationState extends State<Motivation> {
       switch (buttonIndex) {
         case 1:
           _showButton1 = false;
+          cont++;
           break;
         case 2:
           _showButton2 = false;
+          cont++;
           break;
         case 3:
           _showButton3 = false;
+          cont++;
           break;
         case 4:
           _showButton4 = false;
+          cont++;
           break;
       }
     });
-    _startImageDisplayTimer();
+    if (cont == 4) {
+      _startImageDisplayTimer();
+    }
   }
 
   void _startImageDisplayTimer() {
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 5), () {
       setState(() {
         _showImageAfterDelay = true;
       });
-      _audioPlayer.pause(); //pause a música após o atraso
+
       _startNewImage();
     });
   }
 
   void _startNewImage() {
-    Timer(Duration(seconds: 4), () {
+    Timer(const Duration(seconds: 4), () {
+      _audioPlayer.pause(); //pause a música após o atraso
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Motivation2()));
     });
@@ -158,7 +168,7 @@ class _MotivationState extends State<Motivation> {
             width: 94,
             height: 84,
           ),
-          SizedBox(width: 58),
+          const SizedBox(width: 58),
           Text(buttonText),
         ],
       ),
@@ -173,10 +183,10 @@ class _MotivationState extends State<Motivation> {
           width: 94,
           height: 84,
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),

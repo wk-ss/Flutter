@@ -28,12 +28,10 @@ class UserList extends StatelessWidget {
         ),
         child: ListView.builder(
           itemCount: users.length,
-          itemBuilder: (ctx, i) => Center(
+          itemBuilder: (ctx, i) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             child: Container(
-              width: 200,
-              height: 180,
-              margin: EdgeInsets.all(8),
-              padding: EdgeInsets.all(8),
+              height: 150,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -47,15 +45,27 @@ class UserList extends StatelessWidget {
                     backgroundImage: AssetImage(
                       'assets/data/imagns/IMG.jpg',
                     ),
-                    radius: 30,
+                    radius: 80,
                   ),
                   SizedBox(width: 10),
-                  Text(
-                    users.values.elementAt(i).values.elementAt(1),
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
+                  Container(
+                    width: 150,
+                    child: TextButton(
+                      onPressed: () {
+                        // Add your onPressed logic here
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.blue), // Change button color here
+                      ),
+                      child: Text(
+                        users.values.elementAt(i).values.elementAt(1),
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white, // Change text color
+                        ),
+                      ),
                     ),
                   ),
                 ],
