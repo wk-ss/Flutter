@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_projeto/pages/home.dart';
+import 'package:mini_projeto/pages/list_user.dart';
 
 void main() {
   runApp(const MyApp());

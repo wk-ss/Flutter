@@ -41,7 +41,7 @@ class MotivationState extends State<Motivation> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/data/imagns/black.png'),
+            image: AssetImage('assets/data/imagns/ImagemDeFundo1.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -51,54 +51,54 @@ class MotivationState extends State<Motivation> {
             children: [
               _showButton1
                   ? _buildTextButtonWithImage(
-                      'Botão 1',
-                      'assets/data/imagns/black.png',
+                      'Maria',
+                      'assets/data/imagns/Imagem1.1.jpg',
                       () {
                         _onButtonPressed(1);
                       },
                     )
                   : _showImageAfterDelay
                       ? _buildStaticImageAndText(
-                          'assets/data/imagns/IMG2.png', 'Texto Estático 1')
+                          'assets/data/imagns/Imagem2.1.jpg', 'Quer')
                       : Container(),
-              const SizedBox(height: 16),
+              const SizedBox(height: 36),
               _showButton2
                   ? _buildTextButtonWithImage(
-                      'Botão 2',
-                      'assets/data/imagns/black.png',
+                      'Leticia',
+                      'assets/data/imagns/Imagem1.3.jpg',
                       () {
                         _onButtonPressed(2);
                       },
                     )
                   : _showImageAfterDelay
                       ? _buildStaticImageAndText(
-                          'assets/data/imagns/IMG2.png', 'Texto Estático 2')
+                          'assets/data/imagns/Imagem2.2.jpg', 'Ser')
                       : Container(),
               const SizedBox(height: 16),
               _showButton3
                   ? _buildTextButtonWithImage(
-                      'Botão 3',
-                      'assets/data/imagns/black.png',
+                      'Ramos',
+                      'assets/data/imagns/Imagem1.2.jpg',
                       () {
                         _onButtonPressed(3);
                       },
                     )
                   : _showImageAfterDelay
                       ? _buildStaticImageAndText(
-                          'assets/data/imagns/IMG2.png', 'Texto Estático 3')
+                          'assets/data/imagns/Imagem2.3.jpg', 'Minha')
                       : Container(),
               const SizedBox(height: 16),
               _showButton4
                   ? _buildTextButtonWithImage(
-                      'Botão 4',
-                      'assets/data/imagns/black.png',
+                      'Lemos',
+                      'assets/data/imagns/Imagem1.4.jpg',
                       () {
                         _onButtonPressed(4);
                       },
                     )
                   : _showImageAfterDelay
                       ? _buildStaticImageAndText(
-                          'assets/data/imagns/IMG2.png', 'Texto Estático 4')
+                          'assets/data/imagns/Imagem2.4.jpg', 'Namorada ?')
                       : Container(),
             ],
           ),
@@ -109,7 +109,7 @@ class MotivationState extends State<Motivation> {
 
   Future<void> _playMusic() async {
     await _audioPlayer.play(AssetSource(
-        'data/music/bomba.mp3')); // Substitua pelo caminho da sua música
+        'data/music/LookAfterYou.mp3')); // Substitua pelo caminho da sua música
   }
 
   void _onButtonPressed(int buttonIndex) {
@@ -139,7 +139,7 @@ class MotivationState extends State<Motivation> {
   }
 
   void _startImageDisplayTimer() {
-    Timer(const Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 6), () {
       setState(() {
         _showImageAfterDelay = true;
       });
@@ -149,8 +149,9 @@ class MotivationState extends State<Motivation> {
   }
 
   void _startNewImage() {
-    Timer(const Duration(seconds: 4), () {
+    Timer(const Duration(seconds: 6), () {
       _audioPlayer.pause(); //pause a música após o atraso
+
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Motivation2()));
     });
@@ -165,11 +166,12 @@ class MotivationState extends State<Motivation> {
         children: [
           Image.asset(
             imagePath,
-            width: 94,
-            height: 84,
+            width: 164,
+            height: 114,
           ),
           const SizedBox(width: 58),
-          Text(buttonText),
+          Text(buttonText,
+              style: TextStyle(fontSize: 28)), // Aumenta o tamanho da fonte ,),
         ],
       ),
     );
@@ -180,15 +182,15 @@ class MotivationState extends State<Motivation> {
       children: [
         Image.asset(
           imagePath,
-          width: 94,
-          height: 84,
+          width: 154,
+          height: 94,
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 30),
         Text(
           text,
           style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
+            color: Color.fromARGB(255, 100, 4, 67),
+            fontSize: 28,
           ),
         ),
       ],

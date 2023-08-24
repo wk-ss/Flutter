@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_projeto/modules/user.dart';
 import '../data/dummy_users.dart';
 
-class HomePages extends StatelessWidget {
-  const HomePages({Key? key}) : super(key: key);
+class ListUser extends StatelessWidget {
+  const ListUser({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,14 @@ class HomePages extends StatelessWidget {
                     width: 150,
                     child: TextButton(
                       onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => User(
+                                    id: id,
+                                    name: name,
+                                    position: position,
+                                    borroweditems: borroweditems)));
                         // Add your onPressed logic here
                       },
                       style: ButtonStyle(

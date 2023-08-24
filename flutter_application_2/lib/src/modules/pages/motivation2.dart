@@ -31,15 +31,39 @@ class _Motivation2State extends State<Motivation2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Segunda (tela)"),
+        title: Text("Minha Princesa"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            _showFullScreenImage(
-                context); // Chama a função para exibir a imagem em tela cheia
-          },
-          child: Text("Exibir Imagem"),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'assets/data/imagns/Imagem3.jpg'), // Altere o caminho da imagem
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Você entrou na minha vida como nos contos da Disney e naquele instante decidi que passaria o resto da vida contigo. Eu posso não ser um autor de contos de fadas, mas, se permitires, posso te proporcionar uma vida de princesa.",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 100, 4, 67),
+                ),
+                textAlign: TextAlign.center, // Alinha o texto ao centro
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  _showFullScreenImage(
+                      context); // Chama a função para exibir a imagem em tela cheia
+                },
+                child: Text("Clique Aqui"),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -54,7 +78,7 @@ class _Motivation2State extends State<Motivation2> {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/data/imagns/download2.jpg'),
+                image: AssetImage('assets/data/imagns/Imagem3.1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
