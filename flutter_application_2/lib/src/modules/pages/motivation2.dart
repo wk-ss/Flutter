@@ -24,7 +24,7 @@ class _Motivation2State extends State<Motivation2> {
 
   Future<void> _play_Music() async {
     await _audioPlayer.play(AssetSource(
-        'data/music/we_found_love.mp3')); // Substitua pelo caminho da sua música
+        'data/music/girlslikeme.mp3')); // Substitua pelo caminho da sua música
   }
 
   @override
@@ -50,7 +50,7 @@ class _Motivation2State extends State<Motivation2> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 100, 4, 67),
+                  color: Color.fromARGB(255, 13, 0, 8),
                 ),
                 textAlign: TextAlign.center, // Alinha o texto ao centro
               ),
@@ -60,7 +60,7 @@ class _Motivation2State extends State<Motivation2> {
                   _showFullScreenImage(
                       context); // Chama a função para exibir a imagem em tela cheia
                 },
-                child: Text("Clique Aqui"),
+                child: Text("Clique Aqui ❤️"),
               ),
             ],
           ),

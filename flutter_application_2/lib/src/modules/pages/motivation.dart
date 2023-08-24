@@ -189,7 +189,7 @@ class MotivationState extends State<Motivation> {
         Text(
           text,
           style: const TextStyle(
-            color: Color.fromARGB(255, 100, 4, 67),
+            color: Color.fromARGB(255, 1, 0, 9),
             fontSize: 28,
           ),
         ),
